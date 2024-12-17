@@ -21,16 +21,16 @@ This Arduino project displays BMP images from a microSD card onto an ST7789 TFT 
 
 ### ST7789 TFT Screen
 
-| Pin        | Arduino Pin |
-|------------|-------------|
-| VCC        | 5V          |
-| GND        | GND         |
-| CS         | 10          |
-| RESET      | 9           |
-| DC         | 8           |
-| SDI(MOSI)  | 11          |
-| SCK        | 13          |
-
+| Pin           | Arduino Pin | Alternate Name   |
+|---------------|-------------|------------------|
+| **VCC**       | 5V          | VCC              |
+| **GND**       | GND         | GND              |
+| **CS**        | 10          | CS               |
+| **RESET**     | 9           | RST, RESET       |
+| **DC**        | 8           | DC               |
+| **SDI (MOSI)**| 11          | SDA (MOSI)       |
+| **SCK**       | 13          | SCL              |
+| **BL**        | 5V          | BL               |
 ### microSD Card
 
 | Pin        | Arduino Pin |
