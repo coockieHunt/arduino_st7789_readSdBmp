@@ -1,6 +1,18 @@
 # Arduino BMP Image Viewer for ST7789 TFT Screen
 
-This Arduino project displays BMP images from a microSD card onto an ST7789 TFT screen. The images, named `1.bmp`, `2.bmp`, ..., `10.bmp`, are read from the SD card and shown one by one on the screen. Each image is displayed for 2 seconds before the next one is shown. The screen is initialized with a white background, and the images are resized to fit the screen resolution.
+This Arduino project displays BMP images from a microSD card onto an ST7789 TFT screen. The images, named `1.bmp`, `2.bmp`, ..., `10.bmp`, are read from the SD card and shown one by one on the screen.
+
+## Table of Contents
+- [Features](#features)
+- [Hardware Required](#hardware-required)
+- [Pin Connections](#pin-connections)
+  - [ST7789 TFT Screen](#st7789-tft-screen)
+  - [microSD Card](#microsd-card)
+- [Installation](#installation)
+- [Code Overview](#code-overview)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [French Version](#version-française)
 
 ## Features
 
@@ -21,26 +33,27 @@ This Arduino project displays BMP images from a microSD card onto an ST7789 TFT 
 
 ### ST7789 TFT Screen
 
-| Pin           | Arduino Pin | Alternate Name   |
-|---------------|-------------|------------------|
-| **VCC**       | 5V          | VCC              |
-| **GND**       | GND         | GND              |
-| **CS**        | 10          | CS               |
-| **RESET**     | 9           | RST, RESET       |
-| **DC**        | 8           | DC               |
-| **SDI (MOSI)**| 11          | SDA (MOSI)       |
-| **SCK**       | 13          | SCL              |
-| **BL**        | 5V          | BL               |
+| Pin            | Arduino Pin | Alternate Name |
+|----------------|-------------|----------------|
+| **VCC**        | 5V          | VCC            |
+| **GND**        | GND         | GND            |
+| **CS**         | 10          | CS             |
+| **RESET**      | 9           | RST, RESET     |
+| **DC**         | 8           | DC             |
+| **SDI (MOSI)** | 11          | SDA (MOSI)     |
+| **SCK**        | 13          | SCL            |
+| **BL**         | 5V          | BL             |
+
 ### microSD Card
 
-| Pin        | Arduino Pin |
-|------------|-------------|
-| CS         | 4           |
-| SCK        | 13          |
-| MOSI       | 11          |
-| MISO       | 12          |
-| VCC        | 5V          |
-| GND        | GND         |
+| Pin  | Arduino Pin |
+|------|-------------|
+| CS   | 4           |
+| SCK  | 13          |
+| MOSI | 11          |
+| MISO | 12          |
+| VCC  | 5V          |
+| GND  | GND         |
 
 ## Installation
 
@@ -69,3 +82,89 @@ This Arduino project displays BMP images from a microSD card onto an ST7789 TFT 
 ## License
 
 This project is open-source and available under the MIT License.
+
+## Version Française
+
+# Visionneuse d'images BMP Arduino pour écran ST7789 TFT
+
+Ce projet Arduino affiche des images BMP à partir d'une carte microSD sur un écran ST7789 TFT. Les images, nommées `1.bmp`, `2.bmp`, ..., `10.bmp`, sont lues à partir de la carte SD et affichées une par une sur l'écran.
+
+## Table des Matières
+- [Caractéristiques](#caractéristiques)
+- [Matériel Requis](#matériel-requis)
+- [Connexions des Pins](#connexions-des-pins)
+  - [Écran ST7789 TFT](#écran-st7789-tft)
+  - [Carte microSD](#carte-microsd)
+- [Installation](#installation)
+- [Aperçu du Code](#aperçu-du-code)
+- [Résolution des Problèmes](#résolution-des-problèmes)
+- [Licence](#licence)
+
+## Caractéristiques
+
+- Affiche des images BMP à partir d'une carte SD.
+- Charge automatiquement les images numérotées de 1 à 10 (`1.bmp`, `2.bmp`, ...).
+- Chaque image est affichée pendant 2 secondes.
+- Redimensionne les images pour s'adapter à l'écran ST7789 TFT (240x320).
+- Installation simple et facile à utiliser.
+
+## Matériel Requis
+
+- **Carte Arduino** (par exemple, Arduino Uno, Nano, etc.)
+- **Écran ST7789 TFT** (résolution 240x320)
+- **Carte microSD** (formatée en FAT32)
+- **Fils de connexion** (pour les connexions)
+
+## Connexions des Pins
+
+### Écran ST7789 TFT
+
+| Pin            | Pin Arduino | Nom Alternatif |
+|----------------|-------------|----------------|
+| **VCC**        | 5V          | VCC            |
+| **GND**        | GND         | GND            |
+| **CS**         | 10          | CS             |
+| **RESET**      | 9           | RST, RESET     |
+| **DC**         | 8           | DC             |
+| **SDI (MOSI)** | 11          | SDA (MOSI)     |
+| **SCK**        | 13          | SCL            |
+| **BL**         | 5V          | BL             |
+
+### Carte microSD
+
+| Pin  | Pin Arduino |
+|------|-------------|
+| CS   | 4           |
+| SCK  | 13          |
+| MOSI | 11          |
+| MISO | 12          |
+| VCC  | 5V          |
+| GND  | GND         |
+
+## Installation
+
+1. **Installer les bibliothèques requises :**
+   - `Adafruit GFX Library`
+   - `Adafruit ST7789 Library`
+   - `SD Library`
+
+2. **Téléverser le code** sur votre carte Arduino.
+
+3. **Insérer une carte microSD** dans le module SD avec des images BMP numérotées `1.bmp`, `2.bmp`, ..., placées dans le répertoire racine.
+
+4. **Connecter le matériel** selon les connexions des pins listées ci-dessus.
+
+## Aperçu du Code
+
+- **Initialisation** : L'écran TFT est initialisé, et la carte SD est montée.
+- **Chargement des Images** : Le programme charge les images BMP à partir de la carte SD (fichiers nommés `1.bmp`, `2.bmp`, etc.).
+- **Affichage des Images** : Les images sont affichées sur l'écran TFT, redimensionnées pour s'adapter à la taille de l'écran (240x320).
+
+## Résolution des Problèmes
+
+- **Échec de l'initialisation de la carte SD** : Assurez-vous que la carte SD est correctement formatée (FAT32) et connectée.
+- **Image non affichée** : Vérifiez que les fichiers BMP sont correctement nommés (`1.bmp`, `2.bmp`, etc.) et placés dans le répertoire racine de la carte SD.
+
+## Licence
+
+Ce projet est open-source et disponible sous la licence MIT.
